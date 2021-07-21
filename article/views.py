@@ -44,7 +44,7 @@ def sign(request):
 
 def list(request):
     posts_list = Mylist.objects.filter(user = request.user)
-    paginator = Paginator(posts_list,2)
+    paginator = Paginator(posts_list,20)
     page = request.GET.get('page')
     try:
         film = paginator.page(page)
@@ -62,7 +62,7 @@ def mylist(request,id):
     filma = Mylist(user = request.user,title = article.title,director = article.director,image = article.image,value = article.value)
     filma.save()
     posts_list = Mylist.objects.filter(user = request.user)
-    paginator = Paginator(posts_list,2)
+    paginator = Paginator(posts_list,20)
     page = request.GET.get('page')
     try:
         film = paginator.page(page)
