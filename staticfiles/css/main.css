@@ -1,0 +1,35 @@
+img.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 200px;
+}
+.img {
+	width: 400px;
+	height: 600px;
+}
+
+.margin {
+	margin-top: 40px;
+}
+.bottom {
+	margin-bottom: 20px;
+}
+
+.border {
+	border-width: 50px;
+	padding: 10px;
+	border-radius: 5px;
+}
+.bg-color {
+	background-image: linear-gradient(to right,#056575, #17a2b8);
+}
+
+.user_class {
+	width: 500px;
+}
+@media only screen and (max-width: 500px) {
+	.user_class {
+	  width: 250px;
+	}
+  }

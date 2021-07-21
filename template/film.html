@@ -1,0 +1,51 @@
+{% extends 'layout.html' %} 
+{% block body %}
+{% load static %}
+<body>
+	<div class="p-3 mb-2 bg-info text-white">
+	<ul class="nav justify-content-center">
+		  <li class="nav-item">
+		    <a class="nav-link active text-white" href="{% url 'article:logout' %}">Logout</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link text-white" href="#">{{ request.user.username}}</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link text-white" href="{% url 'article:list' %}">My list</a>
+		  </li>
+	</ul>
+</div>
+	<div class="container margin">
+		<div class="row">
+			<div class="col-md-6">
+				{% for a in article  %}
+				<img src="{{a.image.url}}" class="img-fluid img" alt="Responsive image">
+			</div>
+			<div class="col-md-6">
+				
+				<h1> {{a.title}} </h1>
+				<h3> {{a.director}} </h3>
+				<p>
+					{{a.content|safe}}
+				</p>
+				<span> {{a.value}} </span>
+				
+				
+			</div>
+		</div>
+		<div class="row justify-content-center margin bottom">
+			<div class="text-center justify-content-center bottom">
+				<a class="bg-info border text-white" href=" {% url 'article:mylist' a.id %}" role="button">watched add my list</a>
+	            <a class="bg-info border text-white bottom" href="{% url 'article:film' %}" role="button">spin</a>
+				{% endfor %}
+        	</div>
+		</div>
+	</div>
+
+</body>
+{% endblock body %}
+
+
+
+
+ 
